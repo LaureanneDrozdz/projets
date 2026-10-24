@@ -7,29 +7,19 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-//import com.proxilog.ratp.ui.theme.RATPTheme
+import com.proxilog.ratp.ui.DeparturesScreen
+import com.proxilog.ratp.ui.theme.RATPTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MaterialTheme {
-                EcranRer()
+            RATPTheme {
+                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                    DeparturesScreen(modifier = Modifier.padding(innerPadding))
+                }
             }
         }
     }
 }
-
-@Composable
-fun EcranRer() {
-    Text(
-        text = "Bonjour $name !",
-        modifier = modifier
-    )
-}
-
-
